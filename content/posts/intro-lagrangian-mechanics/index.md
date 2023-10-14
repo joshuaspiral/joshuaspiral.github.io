@@ -14,7 +14,7 @@ $\gdef\Lagr{\mathcal{L}}$
 
 Let's write a generalised solution for any $\theta$ instead of 45&deg;.
 
-This problem can be solved with Newtonian mechanics (using $F = ma$) but it is far simpler to solve with Lagrange's approach.
+Try solving the problem with Newtonian mechanics before reading the rest of the article to better understand why this is a preferred method! (the answer will be revealed at the end)
 
 ## Introduction to Lagrangian Mechanics:
 [Lagrangian mechanics](https://en.wikipedia.org/wiki/Lagrangian_mechanics) is a formulation of classsical mechanics, developed by Joseph-Louis Lagrange in 1788. Lagrangian mechanics is based on a fundamental principle of nature called the principle of stationary action. The Lagrangian formalism far outperforms the Newtonian approach to mechanics for certain systems due to its concise and unifying theory. By the end of this article, you will have learnt about the theory behind this powerful method of solving systems and how to apply it to problems.
@@ -44,7 +44,7 @@ In order to grasp a rudimentary understanding of Lagrange's approach, we will ta
 
 1. First, we select a coordinate system that is convenient for our problem: $x$, $y$
 
-![diagram of ball drop problem](/ball_drop.png)
+!(diagram of ball drop problem)["/ball_drop.png"]
 
 2. Then, we define the Lagrangian:
 

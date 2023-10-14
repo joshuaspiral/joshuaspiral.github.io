@@ -1,4 +1,46 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = 'hugo-blog-awesome'
+baseURL = "https://example.org/"
+languageCode = "en-us"
+title = "Joshua's Physics Blog"
+theme = "hugo-blog-awesome"
+
+[menu]
+[[menu.main]]
+  pageRef="/"
+  name = "Home"
+  url = "/"
+  weight = 10
+[[menu.main]]
+  pageRef="posts"
+  name = "Posts"
+  url = "/posts/"
+  weight = 20
+[[menu.main]]
+  pageRef="about"
+  name = "About"
+  url = "/about/"
+  weight = 30
+
+[params]
+  sitename = "Physics Blog"
+  defaultColor = "dark" # set color mode: dark, light, auto
+  description = "Joshua Yeung's Physics Blog"
+  mainSections = ["posts"]
+  toc = true # set to false to disable table of contents "globally"
+  goToTop = true # set to false to disable "go to top" button
+  rssFeedDescription = "summary" # available options: 1) summary 2) full
+  additionalScripts = ['js/custom.js']
+
+[params.author]
+  # avatar = "avatar.jpg" # put the file in assets folder; also ensure that image has same height and width
+  # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
+  intro = "joshuaspiral.github.io"
+  name = "Joshua Yeung"
+  description = "Joshua's Physics Blog"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/joshuaspiral"
+
+[[params.socialIcons]]
+name = "Rss"
+url = "index.xml"
