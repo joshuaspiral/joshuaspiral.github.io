@@ -62,6 +62,10 @@ pre {
     user-select: none;
 }
 
+img {
+    text-align: center;
+}
+
 div.highlight:hover .copy-code,
 pre:hover .copy-code {
     display: block;

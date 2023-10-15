@@ -44,11 +44,11 @@ $$\frac{\partial \Lagr}{\partial q} - \frac{d}{dt} \frac{\partial \Lagr}{\partia
 ### Basic Example of Lagrangian Mechanics:
 In order to grasp a rudimentary understanding of Lagrange's approach, we will take a simple example of a ball of mass $m$ dropped down from a height $h$ on Earth.
 
-1. First, we select a coordinate system that is convenient for our problem: $x$, $y$
+**1. First, we select a coordinate system that is convenient for our problem: $x$, $y$**
 
 ![diagram of ball drop problem](/ball_drop.png)
 
-2. Then, we define the Lagrangian:
+**2. Then, we define the Lagrangian:**
 
 The total kinetic energy of the ball would be the kinetic energy of both the $x$ and $y$ directions:
 $$T = \frac{1}{2}m\dot{x}^2 + \frac{1}{2}m\dot{y}^2$$
@@ -60,7 +60,7 @@ $$V = mgy$$
 So:
 $$\Lagr = \frac{1}{2}m(\dot{x}^2 + \dot{y}^2) - mgy$$
 
-3. Apply the Euler-Lagrange equations:
+**3. Apply the Euler-Lagrange equations:**
 
 For the partial derivative of $\Lagr$ in respect to $x$, as there are no $x$ in $\Lagr$:
 $$\frac{\partial \Lagr}{\partial x} = 0$$
@@ -85,29 +85,25 @@ which also makes sense, as the ball's acceleration towards the Earth is $-g$
 
 Now we will go back to the original problem, and use our new knowledge of Lagrangian mechanics.
 
-1. Select a coordinate system that is convenient for our problem:
+**1. Select a coordinate system that is convenient for our problem:**
 
 ![diagram of the system](/lagrangian_diagram.png)
 As the block is confined along the path of the ramp, we will just define a coordinate $q$ referring to the hypotenusal distance from the top of the ramp to the block. We will also define the $x, y$ as the horizontal and vertical displacement of the block in respect to the ramp. $X$ (big X) denotes the displacement from the origin of the ramp, and so the problem statement asks us to find $\ddot{X}$
 
 The position of the block can be written in terms of $q$ and $X$:
-$$(X - x, y) = (X + q\cos{\theta}, -q\sin{\theta})$$
-> we use X + x because we need to take the positions in the non-inertial reference frame of the whole system in which the block and ramp are travelling in opposite directions.
+$$(X - x, y) = (X - q\cos{\theta}, -q\sin{\theta})$$
+> We use X - x because we need to take the positions in the non-inertial reference frame of the whole system in which the block and ramp are travelling in opposite directions.
 
-2. Define the Lagrangian:
+**2. Define the Lagrangian:**
 
 The total kinetic energy is the sum of the kinetic energy of the ramp and block, so we can take the velocities of each by taking the time derivative ($\dot{X}, \dot{x}, \dot{y}, \dot{q}$)
-$$T = \frac{1}{2}M\dot{X}^2 + \frac{1}{2}m((\dot{X}-\dot{q}\cos{\theta})^2 + (-\dot{q}\sin{\theta})^2)$$
-
-$$T = \frac{1}{2}M\dot{X}^2 + \frac{1}{2}m(\dot{X}^2-2\cos{\theta}\dot{X}\dot{q}+\dot{q}^2\cos^2{\theta}+\dot{q}^2\sin^2{\theta})$$
-
-> trigonometric identity: $\sin^2{\theta} + \cos^2{\theta} = 1$
-
-$$T = \frac{1}{2}M\dot{X}^2 + \frac{1}{2}m(\dot{X}^2-2\cos{\theta}\dot{X}\dot{q}+\dot{q}^2)$$
-
-$$T = \frac{1}{2}M\dot{X}^2 + \frac{1}{2}m\dot{X}^2-m\cos{\theta}\dot{X}\dot{q}+\frac{1}{2}m\dot{q}^2$$
-
-$$T = \frac{1}{2}(M + m)\dot{X}^2+\frac{1}{2}m\dot{q}^2-m\cos{\theta}\dot{X}\dot{q}$$
+$$\begin{aligned}
+T &= \frac{1}{2}M\dot{X}^2 + \frac{1}{2}m((\dot{X}-\dot{q}\cos{\theta})^2 + (-\dot{q}\sin{\theta})^2) \newline
+ &= \frac{1}{2}M\dot{X}^2 + \frac{1}{2}m(\dot{X}^2-2\cos{\theta}\dot{X}\dot{q}+\dot{q}^2\cos^2{\theta}+\dot{q}^2\sin^2{\theta}) \newline
+ &= \frac{1}{2}M\dot{X}^2 + \frac{1}{2}m(\dot{X}^2-2\cos{\theta}\dot{X}\dot{q}+\dot{q}^2) \newline
+ &= \frac{1}{2}M\dot{X}^2 + \frac{1}{2}m\dot{X}^2-m\cos{\theta}\dot{X}\dot{q}+\frac{1}{2}m\dot{q}^2 \newline
+ &= \frac{1}{2}(M + m)\dot{X}^2+\frac{1}{2}m\dot{q}^2-m\cos{\theta}\dot{X}\dot{q}
+\end{aligned}$$
 
 Y component of block is just $-q\sin{\theta}$, so potential energy is just:
 
@@ -115,23 +111,42 @@ $$U = -mgq\sin{\theta}$$
 
 $$\Lagr = \frac{1}{2}(M + m)\dot{X}^2+\frac{1}{2}m\dot{q}^2 - m\cos{\theta}\dot{X}\dot{q}+ mgq\sin{\theta}$$
 
-Apply the Euler-Lagrange equation for to find equations of motion for $X$:
+**3. Apply the Euler-Lagrange equation for to find equations of motion for $X$:**
 
 $$\frac{d}{dt}\frac{\partial{\Lagr}}{\partial{\dot{X}}} = \frac{\partial{\Lagr}}{\partial{X}}$$
 
-$$(M+m)\ddot{X}-m\cos{\theta}\ddot{q} = 0\implies\ddot{X} = \frac{m}{M+m}\cos{\theta}\ddot{q}$$
+$$(M+m)\ddot{X}-m\cos{\theta}\ddot{q} = 0\implies\ddot{X} = \frac{m}{M+m}\cos{\theta}\ddot{q} \tag{1}$$
 
 Do the same for $q$:
 
 $$\frac{d}{dt}\frac{\partial{\Lagr}}{\partial{\dot{q}}} = \frac{\partial{\Lagr}}{\partial{q}}$$
 
-$$\cancel{m}\ddot{q}-\cancel{m}\cos{\theta}\ddot{X} = \cancel{m}g\sin{\theta}$$
+$$\cancel{m}\ddot{q}-\cancel{m}\cos{\theta}\ddot{X} = \cancel{m}g\sin{\theta} \implies \ddot{q} - \cos{\theta}\ddot{X} = g\sin{\theta} \tag{2}$$
 
-Substitute equation of motion for $X$ into $q$:
+Substituting $(1)$ into $(2)$:
 
-$$\ddot{q} +\left(\frac{m}{M+m}\cos{\theta}\ddot{q}\right)\cos{\theta} = g\sin{\theta} \implies \ddot{q} = g\sin{\theta}\frac{M+m}{M+m\sin^2{\theta}}$$
+$$\begin{align}
+\ddot{q} - \cos{\theta} \left(\frac{m}{M+m}\cos{\theta}\ddot{q}\right) &= g\sin{\theta} \nonumber \newline
+\ddot{q} \left( 1 - \frac{m}{M+m}\cos^2{\theta} \right) &= g\sin\theta \nonumber \newline
+\ddot{q} \left( \frac{M + m\sin^2\theta}{M + m}\right) &= g\sin\theta \nonumber \newline
+\ddot{q} &= \frac{M+m}{M+m\sin^2{\theta}}g\sin{\theta} \tag{3}
+\end{align}$$ 
 
-Substitute $\ddot{q}$ into $\ddot{X}$:
+And finally, substituting $(3)$ into $(2)$ gets you:
 
-$$\ddot{X}=-\frac{m}{\cancel{M+m}}\cos{\theta}\left(g\sin{\theta}\frac{\cancel{M+m}}{M+m\sin^2{\theta}}\right) \implies \ddot{X}=-g\cos{\theta}\sin{\theta}\frac{m}{M+m\sin^2{\theta}}$$
+$$\begin{aligned}
+\ddot{X}&=\frac{m}{\cancel{M+m}}\cos{\theta}\left(\frac{\cancel{M+m}}{M+m\sin^2{\theta}} g\sin{\theta}\right) \newline
+&= \frac{m\cos{\theta}\sin{\theta}}{M+m\sin^2{\theta}} g
+\end{aligned}$$
+
+To verify the validity of our answer, let us examine its dimensions. As we are dealing with acceleration, our expected units should be in the form of $\text{L} \cdot \text{T}^{-2}$, where [L] represents length and [T] represents time.
+
+$$\frac{\cancel{\text{M}} \cdot \text{L} \cdot \text{T}^{-2}}{\cancel{\text{M}}} = \text{L} \cdot \text{T}^{-2}$$
+
+$\therefore$ The equation is dimensionally consistent
+
+Let's put in our original $\theta$ of 45&deg;:
+$$\left(\frac{m\cos{45\degree}\sin{45\degree}}{M+m\sin^2{45\degree}}\right)g = \left(\frac{m\cdot\frac{1}{2}}{M+\frac{m}{2}}\right)g = \left(\frac{m}{m + 2M}\right)g$$
+
+So the answer is E.
 
