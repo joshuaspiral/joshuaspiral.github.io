@@ -3,6 +3,8 @@ title: 'Overengineering an HKPhO problem - A Brief Introduction to Lagrangian Me
 date: 2023-10-12T07:55:03+08:00
 draft: false
 math: true
+showToc: true
+comments: true
 ---
 <!-- Definitions -->
 $\gdef\Lagr{\mathcal{L}}$
@@ -44,7 +46,7 @@ In order to grasp a rudimentary understanding of Lagrange's approach, we will ta
 
 1. First, we select a coordinate system that is convenient for our problem: $x$, $y$
 
-!(diagram of ball drop problem)["/ball_drop.png"]
+![diagram of ball drop problem](/ball_drop.png)
 
 2. Then, we define the Lagrangian:
 
