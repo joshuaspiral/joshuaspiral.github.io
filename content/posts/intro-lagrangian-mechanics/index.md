@@ -35,9 +35,9 @@ The principle of least action, also known as the stationary-action principle, is
 
 The action of a trajectory is given by the integral of the Lagrangian along the trajectory.     
 
-$$S = \int_{t_1}^{t_2} \Lagr \, \mathrm{d}t$$
+$$S = \int_{t_1}^{t_2} \Lagr \ \mathrm{d}t$$
 
-To find the trajectory with stationary action, we use the Euler-Lagrange equation. The Euler-Lagrange equation is useful for solving optimisation problems in which we find the function that minimises a functional ($S$ in this case).
+To find the trajectory with stationary action, we use the [Euler-Lagrange equation](https://en.wikipedia.org/wiki/Euler%E2%80%93Lagrange_equation). The Euler-Lagrange equation is useful for solving optimisation problems in which we find the function that minimises a functional ($S$ in this case). The full derivation of the Euler-Lagrange can be found [here](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electro-Optics/Direct_Energy_(Mitofsky)/11%3A_Calculus_of_Variations/11.03%3A_Derivation_of_the_Euler-Lagrange_Equation)
 
 > A functional is a certain type of function that maps a function to a real number.
 
