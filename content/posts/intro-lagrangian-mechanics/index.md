@@ -22,16 +22,16 @@ Try solving the problem with Newtonian mechanics before reading the rest of the 
 [Lagrangian mechanics](https://en.wikipedia.org/wiki/Lagrangian_mechanics) is a formulation of classsical mechanics, developed by Joseph-Louis Lagrange in 1788. Lagrangian mechanics is based on a fundamental principle of nature called the principle of stationary action. The Lagrangian formalism far outperforms the Newtonian approach to mechanics for certain systems due to its concise and unifying theory. By the end of this article, you will have learnt about the theory behind this powerful method of solving systems and how to apply it to problems.
 
 ### The Lagrangian:
-The Lagrangian, typically denoted by $\Lagr$, is the positive difference between the kinetic energy $T$ and the potential energy $V$. 
+The Lagrangian, typically denoted by $\Lagr$, is the positive difference between the kinetic energy $T$ and the potential energy $U$. 
 
-$$\Lagr = T - V$$
+$$\Lagr = T - U$$
 
 > Note that this is the Lagrangian for classical systems, and it can vary in general relativity and quantum mechanics.
 
 The Lagrangian is an important quantity, and is used to define the action of a trajectory.
 
 ### Principle of Least Action:
-The principle of least action, also known as the stationary-action principle, is a fundamental concept in physics. It states that the actual path taken by a physical system between two points in time is the one that minimizes the action integral. The action, denoted by $S$, is a scalar quantity that describes the energy of the system over a certain period of time.
+The principle of least action, also known as the stationary-action principle, is a fundamental concept in physics. It states that the actual path taken by a physical system between two points in time is the one that minimises the action integral. The action, denoted by $S$, is a scalar quantity that describes the energy of the system over a certain period of time.
 
 The action of a trajectory is given by the integral of the Lagrangian along the trajectory.     
 
@@ -61,7 +61,7 @@ $$T = \frac{1}{2}m\dot{x}^2 + \frac{1}{2}m\dot{y}^2$$
 $$    = \frac{1}{2}m(\dot{x}^2 + \dot{y}^2)$$
 
 The potential energy of the ball is just $mgh$:
-$$V = mgy$$
+$$U = mgy$$
 
 So:
 $$\Lagr = \frac{1}{2}m(\dot{x}^2 + \dot{y}^2) - mgy$$
