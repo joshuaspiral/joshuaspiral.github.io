@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+<div style="font-family: var(--font-mono); font-size: 0.95rem;">
+    <p style="color: var(--text);"><strong>$ ls -lt blog/</strong></p>
+
+    <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+        {{ $validPages := where .Site.RegularPages "Title" "!=" "" }}
+        {{ $blogPages := where $validPages "File.BaseFileName" "!=" "about" }}
+        {{ range $blogPages.ByDate.Reverse }}
+        <div style="display: flex; gap: 1rem;">
+            <span style="color: var(--muted);">-rw-r--r--</span>
+            <span style="color: var(--foam);">joshua</span>
+            <span style="color: var(--rose);">{{ math.Round (div .WordCount 100.0) }}k</span>
+            <span style="color: var(--muted);">{{ .Date.Format "Jan 02 06" | lower }}</span>
+            <a href="{{ .RelPermalink }}">{{ .Title | lower }}</a>
+        </div>
+        {{ end }}
+    </div>
+</div>
+
+{{ end }}

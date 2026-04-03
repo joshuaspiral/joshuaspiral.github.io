@@ -1,0 +1,7 @@
+baseURL = 'https://joshuaspiral.xyz/'
+locale = 'en-us'
+title = 'joshua yeung'
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

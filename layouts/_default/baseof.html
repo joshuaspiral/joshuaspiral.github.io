@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ .Title | lower }} | joshuaspiral</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '\\[', right: '\\]', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false}
+                ],
+                throwOnError : false
+            });
+        });
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body class="theme-paper">
+    <canvas id="seasonal-effect" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: -1;"></canvas>
+
+    <div class="layout">
+        <header class="site-header">
+            <div class="header-left">
+<a href="/" class="site-logo-container" title="eadem mutata resurgo" style="text-decoration: none;">
+    <svg class="spiral-logo" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;">
+        <path d="M12 12C12 10.3431 10.6569 9 9 9C7.34315 9 6 10.3431 6 12C6 14.7614 8.23858 17 11 17C14.3137 17 17 14.3137 17 11C17 6.58172 13.4183 3 9 3" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <span class="prompt-user">joshua</span><span class="prompt-at">@</span><span class="prompt-host">spiral</span><span class="prompt-sep">:</span><span class="prompt-path">~</span><span class="prompt-char">$</span>
+</a>
+            </div>
+            <nav class="site-nav">
+                <a href="/">index</a>
+                <a href="/about/">about</a>
+                <button id="theme-toggle" aria-label="toggle theme">[light]</button>
+            </nav>
+        </header>
+
+        <main class="content-wrapper">
+            {{ block "main" . }}{{ end }}
+        </main>
+
+        <button id="back-to-top" aria-label="Back to top">[top]</button>
+    </div>
+
+    <script src="/js/interactions.js"></script>
+    <script src="/js/animations.js"></script>
+
+    <script>
+        const themeBtn = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+
+        if (root.getAttribute('data-theme') === 'light') {
+            themeBtn.textContent = '[dark]';
+        } else {
+            themeBtn.textContent = '[light]';
+        }
+
+        themeBtn.addEventListener('click', () => {
+            let currentTheme = root.getAttribute('data-theme');
+            let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            root.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeBtn.textContent = newTheme === 'dark' ? '[light]' : '[dark]';
+        });
+    </script>
+</body>
+</html>

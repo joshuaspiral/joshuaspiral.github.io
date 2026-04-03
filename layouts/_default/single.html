@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="note-header">
+    <h1>{{ .Title }}</h1>
+</div>
+
+<div class="properties-container">
+    <div class="property-row">
+        <div class="property-key">created</div>
+        <div class="property-value">{{ .Date.Format "Jan 02 06" | lower }}</div>
+    </div>
+
+    <div class="property-row">
+        <div class="property-key">last modified</div>
+        <div class="property-value">{{ .Lastmod.Format "Jan 02 06" | lower }}</div>
+    </div>
+
+    {{ if .Params.tags }}
+    <div class="property-row">
+        <div class="property-key">tags</div>
+        <div class="property-value">
+            {{ range .Params.tags }}
+            <a href="/tags/{{ . | urlize }}" class="wikilink">#{{ . | lower }}</a>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+</div>
+
+<div class="markdown-body">
+    {{ .Content }}
+</div>
+{{ end }}

@@ -1,0 +1,204 @@
+{{ define "main" }}
+<section class="portfolio-home">
+    <header class="hero-section">
+        <h1 class="hero-title">joshua yeung</h1>
+        <p class="hero-bio">
+            computer science student at the university of toronto.<br>
+        </p>
+        <p class="hero-quote"><a href="/eadem-mutata-resurgo/"><i>eadem mutata resurgo.</i></a></p>
+            <div class="contact-links">
+                <span class="comment"># links</span><br>
+                <a href="/posts/about/">about</a> /
+                <a href="#" class="email-copy" data-email="hi@joshuaspiral.xyz">email</a> /
+                <a href="https://github.com/joshuaspiral">github</a>
+            </div>
+    </header>
+
+    <div id="now-playing" class="now-playing" style="display:none">
+        <img id="np-art" class="np-art" src="" alt="" width="48" height="48">
+        <div class="np-info">
+            <span id="np-label" class="np-label">$ navidrome --now-playing</span>
+            <span class="np-track">
+                <span class="np-icon">♪</span>
+                <span id="np-title" class="np-title"></span>
+                <span class="np-sep">—</span>
+                <span id="np-artist" class="np-artist"></span>
+            </span>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <section class="ls-section">
+        <div class="ls-header">
+            <span class="prompt-char">$</span> ls -lt <span class="ls-string">blog/</span> <span class="comment"># a collection of my writings</span>
+        </div>
+            <div class="ls-output">
+                {{ $validPages := where .Site.RegularPages "Title" "!=" "" }}
+                {{ $blogPages := where $validPages "File.BaseFileName" "!=" "about" }}
+                {{ range $blogPages.ByDate.Reverse }}
+                <div class="ls-row">
+                    <span class="ls-perms">-rw-r--r--</span>
+                    <span class="ls-owner">joshua</span>
+                    <span class="ls-size">{{ math.Round (div .WordCount 100.0) }}k</span>
+                    <span class="ls-date">{{ .Date.Format "Jan 02 06" | lower }}</span>
+                    <a href="{{ .RelPermalink }}" class="ls-file">{{ .Title | lower }}</a>
+                </div>
+                {{ end }}
+            </div>
+    </section>
+    <div class="divider"></div>
+</section>
+
+<script>
+const LASTFM_USER = 'jspir';
+const LASTFM_KEY  = '1492d8b348a895e457f084a19f74804b';
+
+if (LASTFM_USER && LASTFM_KEY) {
+    fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LASTFM_USER}&api_key=${LASTFM_KEY}&format=json&limit=1`)
+        .then(r => r.json())
+        .then(data => {
+            const track = data?.recenttracks?.track?.[0];
+            if (!track) return;
+            const isLive = track['@attr']?.nowplaying === 'true';
+            document.getElementById('np-title').textContent = track.name.toLowerCase();
+            document.getElementById('np-artist').textContent = track.artist['#text'].toLowerCase();
+            document.getElementById('np-label').textContent = isLive ? '$ navidrome --now-playing' : '$ navidrome --last-played';
+            const art = track.image?.[2]?.['#text'];
+            if (art) {
+                const img = document.getElementById('np-art');
+                img.src = art;
+                img.style.display = 'block';
+            }
+            document.getElementById('now-playing').style.display = 'flex';
+        })
+        .catch(() => {});
+}
+</script>
+
+<style>
+.hero-section { margin-bottom: 2rem; }
+.hero-title {
+    font-family: var(--font-mono);
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+.hero-bio {
+    font-family: var(--font-sans);
+    max-width: 600px;
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+.hero-quote {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+.hero-quote a {
+    color: inherit;
+    border: none;
+    text-decoration: none;
+}
+.hero-quote a:hover {
+    color: var(--gold);
+    opacity: 1;
+}
+.comment {
+    color: var(--subtle);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+.now-playing {
+    display: none;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: 1.5rem;
+    font-family: var(--font-mono);
+}
+.np-art {
+    display: none;
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border: 1px solid var(--highlight-med);
+    flex-shrink: 0;
+    image-rendering: auto;
+}
+.np-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.np-label { font-size: 0.8rem; color: var(--muted); }
+.np-track { font-size: 0.9rem; color: var(--text); }
+.np-icon { color: var(--pine); margin-right: 0.3rem; }
+.np-title { color: var(--foam); }
+.np-sep { color: var(--subtle); margin: 0 0.3rem; }
+.np-artist { color: var(--muted); }
+
+.divider {
+    height: 1px;
+    background-color: var(--highlight-med);
+    margin: 2.5rem 0;
+    opacity: 0.2;
+}
+
+.ls-section { margin-bottom: 2.5rem; }
+.ls-header {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.ls-string { color: var(--foam); }
+.ls-output {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+.ls-row {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 0.25rem;
+    align-items: baseline;
+}
+.ls-perms {
+    color: var(--subtle);
+    flex-shrink: 0;
+    font-family: ui-monospace, 'SF Mono', 'Cascadia Code', monospace;
+}
+.ls-owner { color: var(--foam); flex-shrink: 0; }
+.ls-size { color: var(--rose); text-align: right; min-width: 45px; flex-shrink: 0; }
+.ls-date { color: var(--muted); flex-shrink: 0; }
+.ls-file {
+    color: var(--gold);
+    border: none;
+    font-weight: 600;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 500px;
+    white-space: nowrap;
+}
+.ls-file:hover {
+    color: var(--orange);
+    text-decoration: underline;
+}
+.file-executable { color: var(--pine); font-weight: 700; }
+
+@media (max-width: 700px) {
+    .ls-perms, .ls-owner, .ls-size { display: none; }
+    .ls-row { gap: 0.75rem; }
+}
+</style>
+{{ end }}
