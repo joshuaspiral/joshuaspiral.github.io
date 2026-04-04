@@ -195,7 +195,38 @@ Do the same for \\(q\\):
 Substituting \\((1)\\) into \\((2)\\):
 
 \\[\begin{align}
-\ddot{q} - cos{&theta;} \left(\frac{m}{M+m}cos{&theta;}\ddot{q}\right) &amp;= gsin{&theta;} \nonumber \newline
-\ddot{q} \left( 1 - \frac{m}{M+m}cos^2{&theta;} \right) &amp;= gsin&theta; \nonumber \newline
-\ddot{q} \left( \frac{M + m\sin^2\theta}{M + m}\right) &amp;= gsin&theta; \nonumber \newline
-\ddot{q} &amp;= \frac{M+m}{M+msin^2{&theta;}}gsin{\\
+\ddot{q} - \cos{\theta} \left(\frac{m}{M+m}\cos{\theta}\ddot{q}\right) &= g\sin{\theta} \nonumber \newline
+\ddot{q} \left( 1 - \frac{m}{M+m}\cos^2{\theta} \right) &= g\sin\theta \nonumber \newline
+\ddot{q} \left( \frac{M + m\sin^2\theta}{M + m}\right) &= g\sin\theta \nonumber \newline
+\ddot{q} &= \frac{M+m}{M+m\sin^2{\theta}}g\sin{\theta} \tag{3}
+\end{align}\\]
+
+And finally, substituting \\((3)\\) into \\((2)\\) gets you:
+
+\\[\begin{aligned}
+\ddot{X}&=\frac{m}{\cancel{M+m}}\cos{\theta}\left(\frac{\cancel{M+m}}{M+m\sin^2{\theta}} g\sin{\theta}\right) \newline
+&= \frac{m\cos{\theta}\sin{\theta}}{M+m\sin^2{\theta}} g
+\end{aligned}\\]
+
+To verify the validity of our answer, let us examine its dimensions. As we are dealing with acceleration, our expected units should be in the form of \\(\text{L} \cdot \text{T}^{-2}\\), where \\(\text{L}\\) represents length and \\(\text{T}\\) represents time.
+
+\\[\frac{\cancel{\text{M}} \cdot \text{L} \cdot \text{T}^{-2}}{\cancel{\text{M}}} = \text{L} \cdot \text{T}^{-2}\\]
+
+\\(\therefore\\) The equation is dimensionally consistent
+
+Let's check that the equation makes sense by substituting some test values:
+
+If \\(\theta = 0\degree\\), the inclined plane should not move and the block should not move at all.
+
+\\[\ddot{X}(\theta = 0\degree) = \left( \frac{m \cdot 1 \cdot 0}{M + m \cdot 0} \right) g = 0\\]
+\\[\ddot{q}(\theta = 0\degree) = \left( \frac{M + m}{M + m \cdot 0} \right) g \cdot 0 = 0\\]
+
+If \\(\theta = 90\degree\\), the inclined plane should not move either, but the block should accelerate downwards with a magnitude of \\(g\\) as there is no contact with the inclined plane.
+
+\\[\ddot{X}(\theta = 90\degree) = \frac{m \cdot 0 \cdot 1}{M + m \cdot 1}g = 0\\]
+\\[\ddot{q}(\theta = 90\degree) = \left( \frac{M + m}{M + m \cdot 1} \right) g \cdot 1 = g\\]
+
+Let's put in our original \\(\theta\\) of 45&amp;deg;:
+\\[\left(\frac{m\cos{45\degree}\sin{45\degree}}{M+m\sin^2{45\degree}}\right)g = \left(\frac{m\cdot\frac{1}{2}}{M+\frac{m}{2}}\right)g = \left(\frac{m}{m + 2M}\right)g\\]
+
+So the answer is E.
