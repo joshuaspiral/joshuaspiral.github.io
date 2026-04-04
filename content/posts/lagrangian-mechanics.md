@@ -9,7 +9,7 @@ weight = 2001
 
 ## Problem Statement {#problem-statement}
 
-![](/attachments/hkpho_question.jpg)
+![](/img/hkpho_question.jpg)
 [source](https://hkpho.phys.ust.hk/archive_2016/HKPhO/2016_Paper.pdf)
 
 Let's write a generalised solution for any \\(\theta\\) instead of 45°.
@@ -21,8 +21,7 @@ answer will be revealed at the end.
 
 ## Introduction to Lagrangian Mechanics {#introduction-to-lagrangian-mechanics}
 
-[Lagrangian
-mechanics](https://en.wikipedia.org/wiki/Lagrangian_mechanics) is a formulation of classsical mechanics, developed by
+[Lagrangian mechanics](https://en.wikipedia.org/wiki/Lagrangian_mechanics) is a formulation of classsical mechanics, developed by
 Joseph-Louis Lagrange in 1788. Lagrangian mechanics is based on a
 fundamental principle of nature called the principle of stationary
 action.
@@ -94,7 +93,7 @@ height \\(h\\) on Earth.
 **1. First, we select a coordinate system that is convenient for our
 problem: \\(x\\), \\(y\\)**
 
-{{< figure src="/attachments/ball_drop.png" >}}
+{{< figure src="/img/ball_drop.png" >}}
 
 **2. Then, we define the Lagrangian:**
 
@@ -142,7 +141,7 @@ Lagrangian mechanics.
 
 **1. Select a coordinate system that is convenient for our problem:**
 
-{{< figure src="/attachments/lagrangian_diagram.png" >}}
+{{< figure src="/img/lagrangian_diagram.png" >}}
 
 To simplify our analysis, let's define a coordinate system as follows:
 

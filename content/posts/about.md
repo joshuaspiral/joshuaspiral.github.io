@@ -2,7 +2,7 @@
 title = "About"
 author = ["Joshua Yeung"]
 date = 2026-04-03
-tags = ["root", "pkm", "meta"]
+tags = ["meta"]
 draft = false
 weight = 1001
 +++
@@ -10,8 +10,11 @@ weight = 1001
 I'm **Joshua**, a first year CS student at the University of Toronto.
 
 This is my [site](/posts/slug-rust-ssg/): public notes, writeups, and projects, built from my Obsidian vault.
-
 Interested in cryptography, zero-knowledge proofs, privacy tech, and homelabbing.
+
+<a id="figure--fig:max-cat"></a>
+
+{{< figure src="/ox-hugo/max_belly.jpg" caption="<span class=\"figure-number\">Figure 1: </span>my cat, max." width="400px" >}}
 
 
 ## Projects {#projects}
@@ -32,7 +35,7 @@ Interested in cryptography, zero-knowledge proofs, privacy tech, and homelabbing
 -   **Email**: hi [at] joshuaspiral [dot] xyz
 -   **Matrix**: [@joshuaspiral:matrix.org](https://matrix.to/#/@joshuaspiral:matrix.org)
 -   **GitHub**: [joshuaspiral](https://github.com/joshuaspiral)
--   **PGP**: `44CB 980D F60F 1B8D A83B  CEE9 50C7 4ED9 F4D1 B458` · [keyoxide](https://keyoxide.org/44CB980DF60F1B8DA83BCEE950C74ED9F4D1B458) · [keys.openpgp.org](https://keys.openpgp.org/search?q=hi%40joshuaspiral.xyz)
+-   **PGP**: `44CB 980D F60F 1B8D A83B  CEE9 50C7 4ED9 F4D1 B458` · [keyoxide](https://keyoxide.org/44CB980DF60F1B8DA83BCEE950C74ED9F4D1B458)
 
 
 ## Encrypt a message! {#encrypt-a-message}

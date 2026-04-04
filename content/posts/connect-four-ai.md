@@ -4,7 +4,7 @@ author = ["Joshua Yeung"]
 date = 2026-03-20
 tags = ["c", "python", "ai"]
 draft = false
-weight = 2002
+weight = 2001
 +++
 
 I started off with the simple Tic Tac Toe game in Python, and learned
@@ -34,11 +34,9 @@ I did a quick Google search and found that there was something called a
 the game state for `X` in Tic Tac Toe could be represented as follows:
 
 ```text
- X | O |
- O     gameStateX = 0b100_010_000
+ X | O | O     gameStateX = 0b100_010_000
    | X |   ->  gameStateO = 0b011_000_100
- O |
- | X
+ O |   | X
 ```
 
 To determine if someone won, you just shift and AND. For Connect Four,
