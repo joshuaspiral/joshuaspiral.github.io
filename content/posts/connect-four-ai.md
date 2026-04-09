@@ -1,7 +1,7 @@
 +++
 title = "Connect Four AI in C"
 author = ["Joshua Yeung"]
-date = 2026-03-20
+date = 2022-04-13
 tags = ["c", "python", "ai"]
 draft = false
 weight = 2001
