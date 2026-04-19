@@ -9,9 +9,6 @@ weight = 1001
 
 I'm **Joshua**, a first year CS student at the University of Toronto.
 
-This is my [site](/posts/slug-rust-ssg/): public notes, writeups, and projects, built from my Obsidian vault.
-Interested in cryptography, zero-knowledge proofs, privacy tech, and homelabbing.
-
 <a id="figure--fig:max-cat"></a>
 
 {{< figure src="/ox-hugo/max_belly.jpg" caption="<span class=\"figure-number\">Figure 1: </span>my cat, max." width="400px" >}}
